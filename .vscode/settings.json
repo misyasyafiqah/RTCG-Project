@@ -56,5 +56,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "Manomotion Testing.sln"
+    "dotnet.defaultSolution": "RTCG-Project.sln"
 }
