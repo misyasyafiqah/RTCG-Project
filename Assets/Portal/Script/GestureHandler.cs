@@ -35,7 +35,6 @@ public class CircleGestureDetector : MonoBehaviour
                 if (IsCircle(positions, tolerance))
                 {
                     Debug.Log("Circle gesture detected!");
-                    GameObject cubeInstance = Instantiate(cubePrefab, new Vector3(12.59894f, -29.77f, 2.47f), Quaternion.Euler(0, 0, 0));
                 }
                 positions.Clear();
             }
