@@ -10,6 +10,8 @@ TagManager:
   - APos
   - canPickUp
   - WaterElement
+  - particle
+  - Fire
   layers:
   - Default
   - TransparentFX
@@ -17,8 +19,8 @@ TagManager:
   - holdLayer
   - Water
   - UI
-  - 
-  - 
+  - WaterElement
+  - Fire
   - 
   - 
   - 
