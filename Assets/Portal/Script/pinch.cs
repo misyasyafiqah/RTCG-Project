@@ -102,6 +102,19 @@ public class Pinch : MonoBehaviour
             //     color.a = Mathf.Clamp(color.a * 1.1f, 0, 1);
             //     renderer.material.color = color;
             // }
+<<<<<<< HEAD
+=======
+        }
+    }
+
+    void MoveWaterElement(Vector3 targetPosition)
+    {
+        if (MushroomLarge != null && waterRigidbody != null)
+        {
+            // Calculate the new position with smoothing
+            Vector3 newPosition = Vector3.Lerp(waterRigidbody.position, targetPosition, smoothingFactor);
+            waterRigidbody.MovePosition(newPosition);
+>>>>>>> parent of 48efeba (Revert "update script")
         }
     }
 

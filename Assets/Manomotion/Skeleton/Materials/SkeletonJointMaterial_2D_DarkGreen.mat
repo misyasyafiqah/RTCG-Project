@@ -82,6 +82,10 @@ Material:
     - _UVSec: 0
     - _ZWrite: 0
     m_Colors:
+<<<<<<< HEAD
     - _Color: {r: 0.21827456, g: 0.4980389, b: 0.43788242, a: 1.0000001}
+=======
+    - _Color: {r: 0.21836275, g: 0.4980389, b: 0.4379706, a: -0.09999999}
+>>>>>>> parent of 48efeba (Revert "update script")
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
   m_BuildTextureStacks: []
