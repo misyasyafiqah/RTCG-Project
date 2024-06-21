@@ -4,18 +4,13 @@ using UnityEngine;
 using ManoMotion;
 using ManoMotion.RunTime;
 
+
 public class Pinch : MonoBehaviour
 {
     private bool isPinching;
 
     // Reference to the water element
     public GameObject MushroomLarge;
-
-    // Smoothing factor for movement
-    public float smoothingFactor = 0.1f;
-
-    // Rigidbody of the water element
-    private Rigidbody waterRigidbody;
 
     void Start()
     {
@@ -25,16 +20,7 @@ public class Pinch : MonoBehaviour
             MushroomLarge = GameObject.FindGameObjectWithTag("WaterElement");
         }
 
-        // Ensure MushroomLarge has a Rigidbody to enable physics interactions
-        if (MushroomLarge != null)
-        {
-            waterRigidbody = MushroomLarge.GetComponent<Rigidbody>();
-            if (waterRigidbody == null)
-            {
-                waterRigidbody = MushroomLarge.AddComponent<Rigidbody>();
-                waterRigidbody.useGravity = false;
-            }
-        }
+        // Initialization is assumed to be handled by the ManoMotion Manager elsewhere
     }
 
     void Update()
@@ -51,9 +37,6 @@ public class Pinch : MonoBehaviour
                 PinchIn();
                 isPinching = true;
             }
-
-            // Move the water element to the hand position smoothly
-            MoveWaterElement(handInfo.tracking_info.poi);
         }
         else
         {
@@ -74,14 +57,14 @@ public class Pinch : MonoBehaviour
             // Example: Scale down the water element
             MushroomLarge.transform.localScale *= 0.9f;
 
-            // Additional logic: Adjusting transparency (commented out because of shader issue)
-            // Renderer renderer = MushroomLarge.GetComponent<Renderer>();
-            // if (renderer != null)
-            // {
-            //     Color color = renderer.material.color;
-            //     color.a = Mathf.Clamp(color.a * 0.9f, 0, 1);
-            //     renderer.material.color = color;
-            // }
+            // Additional logic: Adjusting transparency
+            Renderer renderer = MushroomLarge.GetComponent<Renderer>();
+            if (renderer != null)
+            {
+                Color color = renderer.material.color;
+                color.a = Mathf.Clamp(color.a * 0.9f, 0, 1);
+                renderer.material.color = color;
+            }
         }
     }
 
@@ -94,6 +77,7 @@ public class Pinch : MonoBehaviour
             // Example: Scale up the water element
             MushroomLarge.transform.localScale *= 1.1f;
 
+<<<<<<< HEAD
             // Additional logic: Adjusting transparency (commented out because of shader issue)
             // Renderer renderer = MushroomLarge.GetComponent<Renderer>();
             // if (renderer != null)
@@ -115,16 +99,16 @@ public class Pinch : MonoBehaviour
             Vector3 newPosition = Vector3.Lerp(waterRigidbody.position, targetPosition, smoothingFactor);
             waterRigidbody.MovePosition(newPosition);
 >>>>>>> parent of 48efeba (Revert "update script")
-        }
-    }
-
-    void MoveWaterElement(Vector3 targetPosition)
-    {
-        if (MushroomLarge != null && waterRigidbody != null)
-        {
-            // Calculate the new position with smoothing
-            Vector3 newPosition = Vector3.Lerp(waterRigidbody.position, targetPosition, smoothingFactor);
-            waterRigidbody.MovePosition(newPosition);
+=======
+            // Additional logic: Adjusting transparency
+            Renderer renderer = MushroomLarge.GetComponent<Renderer>();
+            if (renderer != null)
+            {
+                Color color = renderer.material.color;
+                color.a = Mathf.Clamp(color.a * 1.1f, 0, 1);
+                renderer.material.color = color;
+            }
+>>>>>>> parent of bd7fa44 (update part 2)
         }
     }
 }
